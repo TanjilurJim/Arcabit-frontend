@@ -1,0 +1,795 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* General Body Styling */
+body {
+    /* font-family: 'Montserrat', sans-serif; */
+    background-color: #151515;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0px;
+}
+
+
+.navbar {
+    background-color: #151515;
+    transition: background-color 0.3s ease, opacity 0.4s ease;
+    position: fixed;
+    width: 100%;
+    z-index:1;
+    text-decoration: none; /* Remove default underline */
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px;
+}
+.navbar.scrolled {
+    background-color: #ffffff !important;
+    
+}
+.navbar-hidden {
+    opacity: 0;
+    pointer-events: none; /* Prevent interaction when hidden */
+    transition: opacity 0.3s ease;
+}
+
+.navbar-brand img {
+    height: 46px;
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+    color: #ffffff !important; /* Initial color for dark background */
+    font-weight: 600;
+    font-size: 1rem;
+    position: relative; /* Position for the underline */
+    transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+.navbar-nav .nav-link:not(.dropdown-toggle)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Position underline slightly below the text */
+    width: 0;
+    height: 2px;
+    background-color: #ffffff; /* Underline color */
+    transition: width 0.3s ease; /* Smooth transition for underline expansion */
+}
+
+/* Expand Underline on Hover - Exclude Dropdown Links */
+.navbar-nav .nav-link:not(.dropdown-toggle):hover::after {
+    width: 100%; /* Full width underline on hover */
+}
+.navbar-nav .nav-link:hover {
+     /* Change color on hover */
+}
+
+/* Navbar Links Color on Scroll */
+.navbar.scrolled .nav-link {
+    color: #000000 !important; /* Change to black for visibility on white background */
+}
+
+.navbar-nav .nav-link {
+    
+    color: #ffffff !important;
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: 13px;
+    margin-left: 13px;
+}
+
+.navbar-nav .nav-link:hover {
+    /* color: #ff0036 !important; */
+}
+
+
+/* Products Dropdown - Show on Hover */
+.nav-item.dropdown:hover #navbarDropdown + .dropdown-menu {
+    
+    display: block !important; /* Show dropdown on hover */
+    border:     1px solid #ffffff !important; /* White outline */
+    border-radius: 0px !important; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.95) !important; /* Light background */
+    font-family: 'Poppins', sans-serif;
+    padding-top: 15px; /* Adds space inside the dropdown */
+    margin-top: 35px;
+    z-index: 0;
+    /* position: relative; */
+}
+
+/* Contact Dropdown - Hover to Show, No White Outline or Rounded Edges */
+#contactDropdown + .dropdown-menu {
+    display: none; /* Hidden by default */
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-item.dropdown:hover #contactDropdown + .dropdown-menu {
+    display: block !important; /* Show on hover */
+    z-index: 0;
+    padding-top: 15px;
+    margin-top: 30px;
+    border:     1px solid #ffffff !important;
+    border-radius: 0px !important; 
+}
+
+/* Dropdown Item Styling */
+.dropdown-item {
+    color: #333333 !important; /* Default text color */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.dropdown-item:hover {
+    color: #ff0036 !important; /* Change only the font color on hover */
+    background-color: transparent !important; /* Keep background color transparent */
+}
+
+/* Special Styling for Products Link */
+#navbarDropdown {
+    border: 2px solid #ffffff !important; /* White outline */
+    padding: 5px 20px;
+    border-radius: 30px !important; /* Oval shape */
+    transition: all 0.3s ease;
+}
+
+#navbarDropdown:hover {
+    border-color: #fff7f8 !important; /* Hover border color */
+}
+
+
+
+
+/* Hero Section Styles */
+/* Hero Section Image Styling */
+.hero-image {
+    max-width:571px;
+    height: 410px;
+    margin-top: 20px;
+    padding-right: 6px; /* Adds some space between the image and text */
+}
+
+/* Hero Section Styles */
+/* Hero Section Styles */
+.hero-section {
+    background-color: #151515;
+    height: 420px;
+    padding: 45px 0px 0px 45px; ;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    
+}
+
+.hero-title {
+    font-size: 40px;
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+.hero-buttons {
+    display: flex;
+    
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    
+    
+    padding-left: 36px;
+    position: relative;
+    top: 0;
+    margin-bottom: 10px;
+    opacity: 1;
+    
+    /* display: inline-block; */
+
+
+    
+    
+    line-height: 23px;
+    font-weight: 400px;
+}
+
+.hero-buttons .btn {
+    padding: 12px 20px;
+    font-family: 'Poppins', sans-serif !important;
+    letter-spacing: 1.6px;
+    font-size: 14px !important;
+    font-weight: 500;
+    border-radius: 30px;
+    /* margin: 5px 0; */
+    margin-left: 0px;
+    
+    color: #ffffff;
+    background: linear-gradient(125deg, #8d0c10, #e31e24); 
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: background 0.3s ease-in-out 0.4s, color 0.3s ease-in-out;  /* Smooth gradient transition */
+    width: 372.16px;
+    height: 50px;
+    z-index: 2;
+}
+.hero-buttons .btn3 {
+    padding: 12px 20px;
+    font-family: 'Poppins', sans-serif !important;
+    letter-spacing: 1.6px;
+    font-size: 14px !important;
+    font-weight: 500;
+    border-radius: 30px;
+    margin-left: 0px;
+    margin-right: 50px;
+    color: #ffffff;
+    background: linear-gradient(125deg, #8d0c10, #e31e24); 
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    justify-content: space-between;
+    display: inline-flex;
+    align-items: center;
+    transition: background 0.5s ease-in-out;
+    left: 0;
+    width: 295.75px;
+    height: 50px;
+    z-index: 2;
+    transition: left 0.5s ease-in-out;
+}
+
+/* new */
+
+.hero-buttons .arrow-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;  /* Size of the circle */
+    height: 32px; /* Size of the circle */
+    background-color: #FFFFFF38; /* Semi-transparent white for the circle */
+    border-radius: 50%; /* Makes it round */
+    font-size: 14px; /* Icon size, adjust as needed */
+    color: #ffffff; /* Icon color */
+    transition: background-color 0.3s; /* Smooth background color transition */
+    margin-left: auto;
+    margin-right: -10px;
+    padding-right: 30px;
+}
+
+
+
+.hero-buttons .btn:hover .arrow-circle {
+    background-color: #FFFFFF60; /* Slightly darker pinkish shade on hover */
+}
+
+.hero-buttons .btn:hover {
+    /* background: linear-gradient(125deg, #e31e24, #d31b20);  */
+    color: #ffffff; /* Ensure text color stays white */
+}
+/* .hero-buttons .btn::after {
+    content: '→';
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: bold;
+   
+} */
+
+.hero-image-wrapper {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.hero-image-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #151515;
+    z-index: 1;
+    opacity: 0.8; /* Adjust opacity if needed */
+}
+
+.hero-image {
+    position: relative;
+    z-index: 2;
+    max-width: 100%;
+    height: auto;
+    padding-right: 20px;
+}
+
+.wave-divider {
+    position: relative;
+    background-color: #1b1b1b;
+    height: 50px;
+}
+
+.wave-divider::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background-color: #1b1b1b;
+    border-radius: 50% 50% 0 0;
+}
+.logo-section {
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 20px;
+    background-color: #1b1b1b;
+}
+.logo-section .custom-col-spacing {
+    padding-left: 2px; /* Reduce padding on each side */
+    padding-right: 2px;
+    margin-bottom: 8px; /* Reduce space between rows */
+}
+
+.logo-section .col-md-4 {
+    margin-bottom: 15px; /* Reduce space between rows */
+    
+}
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(185, 29, 29, 0.2); /* Semi-transparent red circle */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px; /* Center and add bottom spacing */
+}
+
+.logo-section .fa-computer {
+    font-size: 40px; /* Increase the size of the Font Awesome icon */
+    color: #aa0000; /* Red color for the icon */
+}
+
+.logo-section p {
+    color: #cccccc;
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+.custom-row-spacing {
+    margin-left: -5px; /* Adjust row margin to reduce space between columns */
+    margin-right: -5px;
+}
+
+
+
+.protection-functions {
+    /* padding: 60px 0; */
+    background-color: #f9f9f9;
+    
+}
+
+.protection-functions h2 {
+    margin-bottom: 30px;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* .function-item {
+    position: relative;
+    padding: 30px;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+}
+
+.function-item:hover {
+    background-color: #ff0036;
+}
+
+.function-icon img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.function-title {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.function-hover-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ff0036;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transform: rotateY('90deg');
+}
+
+.function-item:hover .function-hover-info {
+    opacity: 1;
+}
+
+.function-item:hover .function-title,
+.function-item:hover .function-icon {
+    opacity: 0;
+} */
+
+
+  .personalized {
+    
+  }
+/* 
+  .protection-functions {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.protection-functions h2 {
+    margin-bottom: 40px;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.function-item {
+    perspective: 1000px;
+}
+
+.flip-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.function-item:hover .flip-card-inner {
+    transform: rotateY(90deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.flip-card-front {
+    background-color: #ffffff;
+    color: #333;
+}
+
+.flip-card-back {
+    background-color: #ff0036;
+    color: #ffffff;
+    transform: rotateY(90deg);
+    font-size: 0.7rem;
+} */
+
+ .function-item {
+    position: relative;
+    padding: 30px;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+    transform-style: preserve-3d; /* Enables 3D effect */
+    perspective: 1000px; 
+} 
+
+
+.function-item:hover {
+    background-color: #ff0036;
+}
+
+.function-icon img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    transition: opacity 0.3s ease; /* Smooth transition for hiding icon */
+}
+
+.function-title {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+    transition: opacity 0.3s ease; /* Smooth transition for hiding title */
+}
+
+/* Info that shows on hover */
+.function-hover-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ff0036;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.6s ease;
+    font-size: 0.9rem;
+    font-weight: 400;
+    backface-visibility: hidden;
+    transform: rotateZ(180deg); /* Start off rotated */
+    
+}
+
+/* Hover effects */
+.function-item:hover .function-hover-info {
+    opacity: 1;
+    transform: rotateX(0deg); /* Rotates back to face the viewer */
+}
+
+.function-item:hover .function-title,
+.function-item:hover .function-icon {
+    opacity: 0; /* Hides the icon and title on hover */
+}
+
+.last-section {
+    position: relative;
+    padding-top: 250px;
+    padding-left: 70px;
+    background-image: linear-gradient(rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.5)), url('02/biznes.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    min-height: 650px;
+}
+
+.last-content {
+    position: relative;
+    z-index: 1;
+    text-align: left;
+    height: max-content;
+}
+
+.hero-buttons .btn2 {
+    padding: 10px 25px; /* Adjusted padding */
+    margin: 30px 0 5px 0; /* Updated margin */
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 450;
+    border-radius: 30px;
+    color: #e31e24;
+    background-color: #000000;
+    border: none;
+    box-shadow: 0 4px 8px rgba(242, 242, 242, 0.2);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: none;
+}
+.hero-buttons .arrow-circle2 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    height: 28px;
+    background-color: rgba(233, 215, 215, 0.3); /* Pinkish background */
+    border-radius: 50%;
+    font-weight: bold;
+    color: #d00a0a; /* Set arrow color to red */
+    font-size: 1rem;
+    /* line-height: 1; Ensure the line height centers the contentmargin-right: 20px ; */
+    padding-left: 40px;
+}
+.hero-buttons .arrow-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color:  rgba(233, 215, 215, 0.3); /* Pinkish background */
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    margin-left: auto; margin-right: -13px;
+    /* padding-left: 0px; */
+}
+/* Add the arrow directly within the button */
+
+/* Remove hover effect specifically for this button */
+.hero-buttons .btn2.no-hover:hover {
+    background-color: #000000;
+}
+
+
+.image-hover-effect {
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.image-hover-effect:hover {
+    transform: translateX(-18px); /* Move image 18px to the left on hover */
+}
+element.style {
+    height: 130px;
+}
+/* SVG Divider Wrap */
+.nectar-shape-divider-wrap {
+    position: relative;
+    width: 100%;
+    height: 130px;
+    overflow: hidden;
+    background-color: #151515; /* Match hero section background color */
+    margin-top: px; /* Slight negative margin to close any gap */
+    padding: 0;
+}
+
+/* SVG Divider */
+.nectar-shape-divider {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    fill: #1B1B1B; /* Match background color */
+}
+
+.nectar-shape-divider-wrap2 {
+    position: relative;
+    width: 100%;
+    height: 130px;
+    overflow: hidden;
+    background-color: #1B1B1B; /* Match hero section background color */
+    margin-top: -1px; /* Slight negative margin to close any gap */
+    padding: 0;
+}
+
+/* SVG Divider */
+.nectar-shape-divider2 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    fill: #fcfcfc; /* Match background color */
+}
+
+
+/* Flip Card Container */
+.flip-card {
+    perspective: 1000px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: ;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 550px;
+    text-align: center;
+    transition: transform 0.9s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(-180deg);
+}
+
+/* Front and Back Faces */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Front Face Styling */
+.flip-card-front {
+    background-color: #ffffff;
+}
+
+.flip-card-front img {
+    max-width: 50px;
+    margin-bottom: 15px;
+}
+
+.flip-card-front .function-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+}
+
+/* Back Face Styling */
+.flip-card-back {
+    background-color: #D31B20;
+    color: #ffffff;
+    transform: rotateY(180deg);
+    
+    overflow: hidden; /* to hide the initial position of the sliding text */
+}
+
+
+.flip-card-back p {
+    font-size: 0.875rem;
+    padding: 0 10px;
+    line-height: 1.5;
+    text-align: left;
+    padding-left: 20px; /* Indentation */
+    transform: translateX(100%);
+    transition: transform 0.82s;
+}
+
+.flip-card-front i {
+    font-size: 50px;
+    color: #333;
+    margin-bottom: 15px;
+}
+.flip-card:hover .flip-card-back p {
+    transform: translateY(0); /* Slide text into view on hover */
+}
+
+.test{
+    font-family: 'Poppins',sans-serif;
+    font-size: 14px;
+}
+/* Footer Links Underline Effect */
+.footer-section a {
+    position: relative;
+    color: #cccccc; /* Initial link color */
+    font-weight: bolder;
+    text-decoration: none; /* Ensure no default underline */
+}
+
+.footer-section a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Position underline slightly below the text */
+    width: 0; /* Hidden by default */
+    height: 2px; /* Thickness of the underline */
+    background-color: #cccccc; /* Underline color matches the link color */
+    transition: width 0.3s ease; /* Smooth transition for underline expansion */
+}
+
+.footer-section a:hover::after {
+    width: 100%; /* Full width underline on hover */
+}

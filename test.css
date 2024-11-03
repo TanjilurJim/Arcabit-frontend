@@ -1,0 +1,112 @@
+/* Adjustments to hero image and section styling remain unchanged */
+.hero-image { 
+    max-width: 50%;
+    height: 300px;
+    margin-top: 20px;
+    padding-right: 5px; /* Keeps space between image and text */
+}
+
+.hero-section {
+    background-color: #151515;
+    height: 450px;
+    padding: 60px 0;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero-title {
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #cccccc;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    padding: 13px 18px;
+    position: relative;
+    top: 0;
+    margin-bottom: 10px;
+    opacity: 1;
+    display: inline-block;
+    line-height: 23px;
+    font-weight: 400;
+}
+
+.hero-buttons .btn {
+    padding: 12px 20px;
+    font-family: 'Poppins', sans-serif !important;
+    letter-spacing: 1.8px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    margin: 5px 0;
+    color: #ffffff;
+    background: linear-gradient(125deg, #8d0c10, #e31e24);
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.hero-buttons .btn .fa-arrow-right {
+    color: #ffffff; /* Sets the color of the arrow */
+    margin-left: 8px; /* Adds space between the text and the icon */
+    font-size: 1.2em; /* Adjust size as needed */
+    transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
+}
+
+.hero-buttons .arrow-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: #FFFFFF38;
+    border-radius: 50%;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 20px; /* Consolidated font-size */
+    transition: background-color 0.3s ease;
+}
+
+/* Implementing CSS-only arrow using pseudo-element */
+.hero-buttons .arrow-circle::before {
+    content: '';
+    display: block;
+    width: 10px; /* Narrow width for sharp arrow */
+    height: 10px; /* Equal height and width for symmetrical design */
+    position: absolute;
+    background: #ffffff;
+    transform: rotate(45deg); /* Rotates square to create arrow effect */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    clip-path: polygon(0 0, 100% 0, 50% 100%); /* Clip-path to form arrow */
+}
+
+.hero-buttons .btn:hover .arrow-circle {
+    background-color: #FFFFFF60; /* Darker shade on hover */
+}
+
+.hero-buttons .btn:hover {
+    background: linear-gradient(125deg, #e31e24, #d31b20); /* Gradient for hover */
+    color: #ffffff;
+}
