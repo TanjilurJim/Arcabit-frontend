@@ -19,7 +19,7 @@ body {
     transition: background-color 0.3s ease, opacity 0.4s ease;
     position: fixed;
     width: 100%;
-    z-index:1;
+    z-index:3;
     text-decoration: none; /* Remove default underline */
     font-family: 'Montserrat', sans-serif;
     padding: 10px;
@@ -36,6 +36,15 @@ body {
 
 .navbar-brand img {
     height: 46px;
+}
+#logo-text {
+    color: #ffffff; /* Default color for the text */
+    font-size: 1rem; /* Adjust as needed */
+    margin-left: 10px; /* Adjust spacing as needed */
+}
+
+.navbar.scrolled #logo-text {
+    color: #808080; /* Change to grey when scrolled */
 }
 
 /* Navbar Links */
@@ -95,7 +104,7 @@ body {
     font-family: 'Poppins', sans-serif;
     padding-top: 15px; /* Adds space inside the dropdown */
     margin-top: 35px;
-    z-index: 0;
+    z-index: 2;
     /* position: relative; */
 }
 
@@ -194,6 +203,7 @@ body {
     opacity: 1;
     
     /* display: inline-block; */
+    
 
 
     
@@ -213,18 +223,20 @@ body {
     margin-left: 0px;
     
     color: #ffffff;
-    background: linear-gradient(125deg, #8d0c10, #e31e24); 
+    background: linear-gradient(to right, #8f1014, #E01E23);
     border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    transition: background 0.3s ease-in-out 0.4s, color 0.3s ease-in-out;  /* Smooth gradient transition */
+    transition: color 0.6s ease;  /* Smooth gradient transition */
     width: 372.16px;
     height: 50px;
-    z-index: 2;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
-.hero-buttons .btn3 {
+/* .hero-buttons .btn3 {
     padding: 12px 20px;
     font-family: 'Poppins', sans-serif !important;
     letter-spacing: 1.6px;
@@ -234,20 +246,61 @@ body {
     margin-left: 0px;
     margin-right: 50px;
     color: #ffffff;
-    background: linear-gradient(125deg, #8d0c10, #e31e24); 
+    background: linear-gradient(to right, #8f1014, #E01E23);
+    overflow: hidden;
     border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-decoration: none;
     justify-content: space-between;
     display: inline-flex;
     align-items: center;
-    transition: background 0.5s ease-in-out;
+    transition: color 0.6s ease;
     left: 0;
     width: 295.75px;
     height: 50px;
-    z-index: 2;
-    transition: left 0.5s ease-in-out;
+    z-index: 1;
+    
+} */
+.hero-buttons .btn,
+.hero-buttons .btn3 {
+    padding: 12px 20px;
+    font-family: 'Poppins', sans-serif !important;
+    letter-spacing: 1.6px;
+    font-size: 14px !important;
+    margin-left: 0px;
+    margin-right: 50px;
+    font-weight: 500;
+    border-radius: 30px;
+    color: #ffffff;
+    background: linear-gradient(to right, #8f1014, #E01E23);
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.6s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
+.hero-buttons .btn::before,
+.hero-buttons .btn3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #E01E23, #E01E23); /* Hover color */
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: -1;
+}
+.hero-buttons .btn:hover::before,
+.hero-buttons .btn3:hover::before {
+    opacity: 1;
+}
+
 
 /* new */
 
@@ -268,14 +321,46 @@ body {
 }
 
 
+/* New class specifically for the second button's circle */
+.hero-buttons .arrow-circle-second {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px; /* Size of the circle */
+    height: 32px; /* Size of the circle */
+    background-color: #FFFFFF38; /* Semi-transparent white for the circle */
+    border-radius: 50%; /* Makes it round */
+    font-size: 14px; /* Icon size */
+    color: #ffffff; /* Icon color */
+    transition: background-color 0.3s; /* Smooth background color transition */
+    margin-left: auto; /* Auto to align based on content */
+    margin-right: 0; /* Adjust if necessary for arrow positioning */
+}
+
+.hero-buttons .btn3:hover .arrow-circle-second {
+    background-color: #FFFFFF60; /* Darker shade on hover */
+}
 
 .hero-buttons .btn:hover .arrow-circle {
     background-color: #FFFFFF60; /* Slightly darker pinkish shade on hover */
 }
 
+.hero-buttons::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #E01E23, #E01E23); 
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: -1; 
+}
 .hero-buttons .btn:hover {
     /* background: linear-gradient(125deg, #e31e24, #d31b20);  */
     color: #ffffff; /* Ensure text color stays white */
+    opacity: 1; 
 }
 /* .hero-buttons .btn::after {
     content: '→';
@@ -284,6 +369,7 @@ body {
     font-weight: bold;
    
 } */
+ 
 
 .hero-image-wrapper {
     position: relative;
@@ -355,9 +441,10 @@ body {
     margin: 0 auto 8px; /* Center and add bottom spacing */
 }
 
-.logo-section .fa-computer {
+.logo-section .fa-computer{
     font-size: 40px; /* Increase the size of the Font Awesome icon */
     color: #aa0000; /* Red color for the icon */
+    border-radius: 1px;
 }
 
 .logo-section p {
