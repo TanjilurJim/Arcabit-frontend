@@ -1,15 +1,15 @@
 let lastScrollPosition = 0;
 const navbar = document.querySelector(".navbar");
 const dropdowns = document.querySelectorAll(".nav-item.dropdown");
-let dropdownHovered = false; // Track if a dropdown is hovered
+let dropdownHovered = false;
 
-// Add event listeners for hover on dropdowns
+// Track if a dropdown is hovered
 dropdowns.forEach(dropdown => {
     const dropdownMenu = dropdown.querySelector('.dropdown-menu');
 
     dropdown.addEventListener('mouseenter', () => {
         dropdownHovered = true;
-        dropdownMenu.style.display = 'block'; // Ensure the dropdown stays open when hovered
+        dropdownMenu.style.display = 'block';
         navbar.classList.remove("navbar-hidden");
     });
 
@@ -17,13 +17,13 @@ dropdowns.forEach(dropdown => {
         dropdownHovered = false;
         setTimeout(() => {
             if (!dropdownHovered) {
-                dropdownMenu.style.display = 'none'; // Hide dropdown after delay
+                dropdownMenu.style.display = 'none';
             }
-        }, 200); // Delay to allow mouse to move between elements
+        }, 200);
     });
 
     dropdownMenu.addEventListener('mouseenter', () => {
-        dropdownHovered = true; // Keep dropdown open when mouse is on the menu
+        dropdownHovered = true;
     });
 
     dropdownMenu.addEventListener('mouseleave', () => {
@@ -39,23 +39,19 @@ dropdowns.forEach(dropdown => {
 window.addEventListener("scroll", () => {
     const currentScrollPosition = window.scrollY;
 
-    if (!dropdownHovered) { // Only apply scroll behavior if not interacting with dropdown
+    if (!dropdownHovered) {
         if (currentScrollPosition > 80) {
             if (currentScrollPosition > lastScrollPosition && currentScrollPosition >= 300) {
-                // Scrolling down: hide the navbar
                 navbar.classList.add("navbar-hidden");
                 navbar.classList.remove("scrolled");
             } else {
-                // Scrolling up: show the navbar
                 navbar.classList.remove("navbar-hidden");
                 navbar.classList.add("scrolled");
             }
         } else {
-            // At the top of the page, reset to the original state
             navbar.classList.remove("scrolled", "navbar-hidden");
         }
     }
 
-    // Update the last scroll position to the current one
     lastScrollPosition = currentScrollPosition;
 });
